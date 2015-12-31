@@ -1,0 +1,63 @@
+.top-images-div img.top-images{
+	width:100%;
+	height:550px;
+}
+.carousel-div{
+	padding-top: 3%;
+    padding-left: 0px;
+  	padding-right: 0px;
+}
+.travel-mate-nav{
+  background-color: #0D0138;
+  border-color: #775CDA;
+}
+div.travel-mate-collapse-nav > ul.travel-mate-nav-links > li> a{
+	color:#fff;
+}
+.travel-mate-carousel{
+	position:relative;
+}
+.travel-mate-carousel,
+.travel-mate-sign-up {
+	top:60%;
+	left:0px;
+  position: absolute;
+}
+.travel-mate-sign-up{
+	z-index:10;
+}
+.travel-mate-padding-zero{
+	padding:0px;
+}
+.travel-mate-padding-zero .form-group, div.travel-mate-padding-zero input.input-width{
+	width:100%;
+}
+div.travel-mate-padding-zero input.input-width, .listOfCity{
+	border-radius:0px;
+	height:50px;
+}
+button.input-width{
+	width:100%;
+	height:50px;
+	border-radius:0px 4px 4px 0px;
+}
+.autocomplete-suggestions { border: 1px solid #999; background: #fff; cursor: default; overflow: auto; }
+.autocomplete-suggestion { padding: 10px 5px; font-size: 1.2em; white-space: nowrap; overflow: hidden; }
+.autocomplete-selected { background: #f0f0f0; }
+.autocomplete-suggestions strong { font-weight: normal; color: #3399ff; }
+li.listOfCity {
+	background-color: white;
+	border: 1px solid #ccc;
+	list-style-type: none;
+	text-align: center;
+	vertical-align: middle;
+	color: #555;
+	padding-top: 10px;
+	padding-left: 10px;
+	padding-right: 380px;
+}
+ul.cityNames{
+	padding: 0px;
+width: 440px;
+margin-left: -15px;
+}
