@@ -1,18 +1,13 @@
 <html ng-app="travelMateApp">
-
 <head>
-    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
         TravelMates
     </title>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../../css/stylesheet.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js">
-    </script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js">
-    </script>
-
 </head>
 <!-- Fixed navbar -->
 
@@ -21,19 +16,12 @@
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                    <span class="sr-only">
-              Toggle navigation
-            </span>
-                    <span class="icon-bar">
-            </span>
-                    <span class="icon-bar">
-            </span>
-                    <span class="icon-bar">
-            </span>
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">
-            Bootstrap theme
-          </a>
+                <a class="navbar-brand" href="#">Bootstrap theme</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse travel-mate-collapse-nav">
                 <ul class="nav navbar-nav travel-mate-nav-links">
@@ -47,30 +35,15 @@
                         <a href="#contact">Contact</a>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                Dropdown<span class="caret"></span>
-              </a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown<span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li>
-                                <a href="#">Action</a>
-                            </li>
-                            <li>
-                                <a href="#">Another action</a>
-                            </li>
-                            <li>
-                                <a href="#">Something else here</a>
-                            </li>
-                            <li role="separator" class="divider">
-                            </li>
-                            <li class="dropdown-header">
-                                Nav header
-                            </li>
-                            <li>
-                                <a href="#">Separated link</a>
-                            </li>
-                            <li>
-                                <a href="#">One more separated link</a>
-                            </li>
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li class="dropdown-header">Nav header</li>
+                            <li><a href="#">Separated link</a></li>
+                            <li><a href="#">One more separated link</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -79,7 +52,7 @@
         </div>
     </nav>
     <div class="container-fluid">
-        <div class="row">
+        <div class="row travel-first-page">
             <div class="carousel-div col-md-12">
                 <div id="carousel-example-generic travel-mate-carousel" class="carousel slide" data-ride="carousel">
                     <ol class="carousel-indicators">
@@ -92,13 +65,13 @@
                     </ol>
                     <div class="carousel-inner top-images-div" role="listbox">
                         <div class="item active">
-                            <img class="top-images" data-src="holder.js/1140x500/auto/#777:#555/text:First slide" src="../../images/leh4.jpg" alt="First slide">
+                            <img class="top-images" data-src="holder.js/1140x500/auto/#777:#555/text:First slide" src="../../images/coorg.jpg" alt="First slide">
                         </div>
                         <div class="item">
-                            <img class="top-images" data-src="holder.js/1140x500/auto/#666:#444/text:Second slide" src="../../images/leh5.jpg" alt="Second slide">
+                            <img class="top-images" data-src="holder.js/1140x500/auto/#666:#444/text:Second slide" src="../../images/coorg2.jpg" alt="Second slide">
                         </div>
                         <div class="item">
-                            <img class="top-images" data-src="holder.js/1140x500/auto/#555:#333/text:Third slide" src="../../images/leh6.jpg" alt="Third slide">
+                            <img class="top-images" data-src="holder.js/1140x500/auto/#555:#333/text:Third slide" src="../../images/coorg3.jpg" alt="Third slide">
                         </div>
                     </div>
                 </div>
@@ -107,33 +80,38 @@
                         <div class="col-md-1">
                         </div>
                         <div class="col-md-10 ">
-                            <form class="form-inline">
+                            <form class="form-inline travel-basic-search">
                                 <div class="row">
                                     <div class="col-md-4 travel-mate-padding-zero">
                                         <div class="form-group">
-                                            <input type="text" class="form-control input-width" ng-keypress="getCities()" ng-model="typedChars" id="travelPlace" placeholder="Bangalore">
+                                            <input type="text" autocomplete="off" class="form-control input-width" ng-keypress="getCities()" ng-keydown = "selectCityByKey($event)" ng-model="typedChars" id="travelPlace" placeholder="Bangalore">
                                         </div>
                                     </div>
                                     <div class="col-md-7 travel-mate-padding-zero">
                                         <div class="form-group">
-                                            <input type="text" class="form-control input-width" id="travelType" placeholder="Hiking">
+                                            <input type="text" autocomplete="off" class="form-control input-width" id="travelType" ng-keydown = "selectActivityByKey($event)" placeholder="Hiking">
                                         </div>
                                     </div>
                                     <div class="col-md-1 travel-mate-padding-zero">
-                                        <button type="submit" class="btn btn-default input-width">
-                                            Search...
+                                        <button type="submit" data class="btn btn-default input-width travel-basic-search-btn">
+                                            <span data-hover="Search...">Search...</span>
                                         </button>
                                     </div>
                                 </div>
-                                <ul class="cityNames" ng-show = "showDropDown">
-                                    <li class="listOfCity" ng-repeat="city in cities | filter:typedChars" ng-click="selectCity(city.value)">
-                                        <span>
-                                {{city.value}}
-                              </span>
+                                <ul class="cityNames" ng-show = "showDropDownCity" id="travelCityNames" >
+                                    <li class="listOfCity" tabindex= "{{$index}}" my-enter= "selectCity(city.id, city.value)" ng-repeat="city in cities | filter:typedChars" ng-keydown = "navigateCities($event,$index)" ng-click="selectCity(city.id, city.value)">
+                                        <span>{{city.value}}</span>
                                     </li>
                                 </ul>
+                                <ul class="activityNames" ng-show = "showDropDownActivity" id = "travelActivityNames">
+                                    <li class="listOfActivities" tabindex= "{{$index}}" key-nav ng-repeat="activity in activities" my-enter="selectActivity()" ng-click="selectActivity()">
+                                        <span>{{activity.value}}</span>
+                                    </li>
+                                </ul>
+                                <button type="submit" class="btn btn-primary input-width travel-reverse">
+                                    Reverse your search...
+                                </button>
                             </form>
-
                         </div>
                         <div class="col-md-1">
                         </div>
@@ -141,12 +119,14 @@
                 </div>
             </div>
         </div>
+        <div class="row travel-second-page slide-animate" ng-include src=" '../../html/cityDetails.html' ">
+        </div>
     </div>
     <!-- /container -->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
-    <script src="../../javascript/controller.js">
-    </script>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular-animate.js"></script>
+    <script src="../../javascript/controller.js"></script>
 </body>
-
 </html>

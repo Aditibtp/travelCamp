@@ -30,3 +30,35 @@ CREATE TABLE `travelcamp`.`travel_cities` (
     REFERENCES `travelcamp`.`travel_place` (`place_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION);
+
+  CREATE TABLE `travelcamp`.`activities_name` (
+  `activityId` INT NOT NULL,
+  `activityName` VARCHAR(45) NULL,
+  PRIMARY KEY (`activityId`));
+
+
+
+  CREATE TABLE `travelcamp`.`available_activities` (
+    `idTravelPlaceActivities` INT NOT NULL AUTO_INCREMENT,
+    `cityId` INT(45) NULL,
+    `placeId` INT NULL,
+    `activityId` INT NULL,
+    INDEX `cityId_idx` (`cityId` ASC),
+    PRIMARY KEY (`idTravelPlaceActivities`),
+    INDEX `placeId_idx` (`placeId` ASC),
+    INDEX `activityId_idx` (`activityId` ASC),
+    CONSTRAINT `cityId`
+      FOREIGN KEY (`cityId`)
+      REFERENCES `travelcamp`.`travel_cities` (`city_id`)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION,
+    CONSTRAINT `placeId`
+      FOREIGN KEY (`placeId`)
+      REFERENCES `travelcamp`.`travel_place` (`place_id`)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION,
+    CONSTRAINT `activityId`
+      FOREIGN KEY (`activityId`)
+      REFERENCES `travelcamp`.`activities_name` (`activityId`)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION);

@@ -1,6 +1,6 @@
 .top-images-div img.top-images{
 	width:100%;
-	height:550px;
+	height:100%;
 }
 .carousel-div{
 	padding-top: 3%;
@@ -9,7 +9,6 @@
 }
 .travel-mate-nav{
   background-color: #0D0138;
-  border-color: #775CDA;
 }
 div.travel-mate-collapse-nav > ul.travel-mate-nav-links > li> a{
 	color:#fff;
@@ -19,7 +18,7 @@ div.travel-mate-collapse-nav > ul.travel-mate-nav-links > li> a{
 }
 .travel-mate-carousel,
 .travel-mate-sign-up {
-	top:60%;
+	top:45%;
 	left:0px;
   position: absolute;
 }
@@ -45,6 +44,7 @@ button.input-width{
 .autocomplete-suggestion { padding: 10px 5px; font-size: 1.2em; white-space: nowrap; overflow: hidden; }
 .autocomplete-selected { background: #f0f0f0; }
 .autocomplete-suggestions strong { font-weight: normal; color: #3399ff; }
+
 li.listOfCity {
 	background-color: white;
 	border: 1px solid #ccc;
@@ -56,8 +56,157 @@ li.listOfCity {
 	padding-left: 10px;
 	padding-right: 380px;
 }
-ul.cityNames{
-	padding: 0px;
-width: 440px;
-margin-left: -15px;
+ul.cityNames {
+  width: 34%;
+  padding-left: 0px;
+  margin-left: -14px;
+	height: 300px;
+	overflow-y: auto;
+}
+ul.activityNames{
+	width: 92.6%;
+	padding-left: 33%;
+}
+li.listOfActivities {
+	background-color: white;
+	border: 1px solid #ccc;
+	list-style-type: none;
+	text-align: center;
+	vertical-align: middle;
+	color: #555;
+	padding-top: 10px;
+	padding-left: 10px;
+	padding-bottom: 10px;
+}
+
+ul#travelCityNames li.highlight-city, ul#travelActivityNames li.highlight-city {
+	background-color: #0D0138;
+	font-size: 21px;
+	color: white;
+	border: 1px solid;
+}
+button.travel-reverse{
+	width: 26%;
+	margin-top: 3%;
+	margin-left: 36%;
+}
+
+.travel-basic-search{
+	opacity: 0.8;
+}
+.travel-basic-search-btn{
+	background-color: #4CAF50;
+	color:white;
+}
+/*.travel-basic-search-btn:hover{
+	-webkit-perspective: 1000px;
+ 	animation: travel-btn-anime 2s 0.5s 1 linear alternate;
+	background-color: #4CAF50;
+}*/
+
+.travel-basic-search-btn span{
+	width:100%;
+	height: 100%;
+	position: relative;
+	display: inline-block;
+	background: #4CAF50;
+	-webkit-transition: -webkit-transform 0.3s;
+	-moz-transition: -moz-transform 0.3s;
+	transition: transform 0.3s;
+	-webkit-transform-origin: 50% 0;
+	-moz-transform-origin: 50% 0;
+	transform-origin: 50% 0;
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+}
+
+.travel-basic-search-btn span:hover {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #0965a0;
+	content: attr(data-hover);
+	-webkit-transition: background 0.3s;
+	-moz-transition: background 0.3s;
+	transition: background 0.3s;
+	-webkit-transform: rotateX(-90deg);
+	-moz-transform: rotateX(-90deg);
+	transform: rotateX(-90deg);
+	-webkit-transform-origin: 50% 0;
+	-moz-transform-origin: 50% 0;
+	transform-origin: 50% 0;
+}
+.travel-basic-search-btn:hover span,
+.travel-basic-search-btn:focus span{
+	-webkit-transform: rotateX(90deg) translateY(-22px);
+	-moz-transform: rotateX(90deg) translateY(-22px);
+	transform: rotateX(90deg) translateY(-22px);
+}
+
+@keyframes travel-btn-anime {
+  0%  {
+    background:darkgreen;
+    transform:rotateX(0deg);
+  }
+  25%  {
+    background:green;
+    transform:rotateX(90deg);
+  }
+  50%  {
+    background:lightgreen;
+    transform:rotateX(180deg);
+  }
+  75%  {
+    background:lightgreen;
+    transform:rotateX(270deg);
+  }
+  100% {
+    background:#4CAF50;
+    transform:rotateX(360deg);
+  }
+}
+.travel-filter-div{
+	top: 51px;
+	height:100px;
+	background-color: #d84e55;
+}
+.travel-selected-form{
+	padding-top: 22px;
+}
+div.travel-second-page{
+	display: none;
+}
+div.travel-place-selected-div select.travel-activity-selected{
+	width: 35%;
+	height: 45px;
+  font-size: 17px;
+  border-radius: 0px;
+}
+.travel-place-selected{
+	float: left;
+  width: 21%;
+  height: 45px;
+  border-radius: 0px;
+}
+
+.slide-animate {
+  transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+}
+
+
+.slide-animate.ng-enter {
+  top:-50px;
+}
+.slide-animate.ng-enter.ng-enter-active {
+  top:0;
+}
+
+.slide-animate.ng-leave {
+  top:0;
+}
+.slide-animate.ng-leave.ng-leave-active {
+  top:50px;
 }
